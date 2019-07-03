@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  sc-tester:
+    # depends_on:
+    #   - geth-explorer
+    build:
+      context: ${DOCK_CONT_PATH:-.}
+      # Location is relative to folder containing this compose file
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ${DOCK_CONT_PARENT_PATH:-..}:/workspace
+    command: sleep infinity
+    networks:
+      chainnet:
+        ipv4_address: 172.25.0.133
+# networks:
+#   chainnet:
+#     external:
+#       name: chainnet
