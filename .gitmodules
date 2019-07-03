@@ -1,0 +1,3 @@
+[submodule "geth-dev"]
+	path = geth-dev
+	url = git@github.com:zlumer/geth-dev.git
